@@ -140,6 +140,14 @@ export default function Register({ setIsAuthenticated }) {
               borderRadius: "100px",
               marginBottom: 2,
             }}
+            disabled={Boolean(
+              emailError ||
+                passwordError ||
+                email === "" ||
+                password === "" ||
+                passwordConfirmationError ||
+                passwordConfirmation === ""
+            )}
           >
             Regístrate
           </Button>

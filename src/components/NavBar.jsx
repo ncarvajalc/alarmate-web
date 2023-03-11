@@ -5,7 +5,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { urlHome, urlLogin, urlRegister } from "../App";
 import { theme } from "../theme";

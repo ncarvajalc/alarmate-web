@@ -102,6 +102,9 @@ export default function Login({ setIsAuthenticated }) {
           <Button
             variant="contained"
             fullWidth
+            disabled={Boolean(
+              emailError || passwordError || email === "" || password === ""
+            )}
             onClick={() => {
               setIsAuthenticated(true);
               navigate(urlMyContacts);

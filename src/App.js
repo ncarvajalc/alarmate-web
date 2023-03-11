@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./components/Login";
+import MyContacts from "./components/MyContacts";
 import NavBar from "./components/NavBar";
 import Register from "./components/Register";
 import RequestEmergencyContact from "./components/RequestEmergencyContact";
@@ -34,7 +35,10 @@ function App() {
             path={urlRequestEmergencyContact}
             element={<RequestEmergencyContact />}
           />
-          <Route path={urlMyContacts} element={<div />} />
+          {isAuthenticated && (
+            <Route path={urlMyContacts} element={<MyContacts />} />
+          )}
+          <Route path="*" element={<Navigate to={urlHome} replace />} />
         </Routes>
       </main>
     </>
